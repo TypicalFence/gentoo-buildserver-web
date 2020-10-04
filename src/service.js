@@ -9,7 +9,7 @@ async function getBuildServerContainers(docker) {
 }
 
 function parseContainerName(name) {
-    const split = name.spilt("-");
+    const split = name.split("-");
     const timestamp = split.pop();
     let jobType = null;
 
@@ -33,6 +33,7 @@ function containerToJob(container) {
     }
 
     const id = container.Id;
+    const started = new Date(container.Created * 1000);
     const profile = nameMetadata.profile;
     const type = nameMetadata.jobType;
     let running;
@@ -47,7 +48,7 @@ function containerToJob(container) {
         running = true;
     }
 
-    return new BuildJob({ id, profile, type, running, success });
+    return new BuildJob({ id, started, profile, type, running, success });
 }
 
 class BuildService {

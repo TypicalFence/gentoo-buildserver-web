@@ -1,6 +1,7 @@
-function BuildJob({ id, running, success, profile, type }) {
+function BuildJob({ id, started, running, success, profile, type }) {
     this.id = id;
     this.running = running;
+    this.started = started;
 
     if (running) {
         this.success = null;
