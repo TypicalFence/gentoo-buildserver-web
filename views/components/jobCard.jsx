@@ -26,7 +26,7 @@ const JobCard = ({ job }) => {
                 <h3>{job.profile} {job.type} {emoji}</h3>
             </div>
             <div className="jc-body">
-                <span title={job.date.toISOString()}>{time}</span>
+                <span title={job.started.toISOString()}>{time}</span>
             </div>
         </Box>
     </div>;
