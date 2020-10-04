@@ -5,21 +5,21 @@ const Box = require("./box.jsx");
 const Emoji = require("./emoji.jsx");
 
 const JobCard = ({ job }) => {
+    const emoji = (() => {
+        if (!job.running) {
+            if (job.sucess) {
+                return <Emoji emoji="✔️" />;
+            } else {
+                return <Emoji emoji="❌" />;
+            }
+        }
+    })();
+
     return <Box className="job-card">
         <div className="jc-head">
-            <h3>{job.profile}</h3>
-            <h5>{job.type}</h5>
+            <h3>{job.profile} {job.type} {emoji}</h3>
         </div>
         <div className="jc-body">
-            {(() => {
-                if (!job.running) {
-                    if (job.sucess) {
-                        return <Emoji emoji="✔️" />;
-                    } else {
-                        return <Emoji emoji="❌" />;
-                    }
-                }
-            })()}
         </div>
     </Box>;
 };

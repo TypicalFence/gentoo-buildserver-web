@@ -13,11 +13,11 @@ function parseContainerName(name) {
     const timestamp = split.pop();
     let jobType = null;
 
-    if (JobTypes.includes(split.slice(-1))) {
+    if (JobTypes.includes(split.slice(-1)[0])) {
         jobType = split.pop();
     }
 
-    const profile = split[0].replace("_", "/");
+    const profile = split[0].replace("_", "/").substring(1);
 
     return { profile, timestamp, jobType };
 }
@@ -34,12 +34,12 @@ function containerToJob(container) {
 
     const id = container.Id;
     const profile = nameMetadata.profile;
-    const type = nameMetadata.type;
+    const type = nameMetadata.jobType;
     let running;
     let success;
 
-    if (container.State === "Exited") {
-        this.running = false;
+    if (container.State === "exited") {
+        running = false;
         const statusString = container.Status.split(" ");
         const exitCode = statusString[1].replace("(", "").replace(")", "");
         success = exitCode !== "0";
