@@ -58,7 +58,9 @@ class BuildService {
 
     async getJobs() {
         return getBuildServerContainers(this.docker).then(containers => {
-            return containers.map(containerToJob).filter(x => x !== null);
+            return containers.map(containerToJob)
+                .filter(x => x !== null)
+                .filter(x => x.type);
         });
     }
 }
