@@ -3,7 +3,7 @@ const { BuildJob, JobTypes } = require("./models.js");
 
 async function getBuildServerContainers(docker) {
     let containers = await docker.listContainers({ all: true });
-    containers = containers.filter(x => x.image === "buildserver");
+    containers = containers.filter(x => x.Image === "buildserver");
 
     return containers;
 }
