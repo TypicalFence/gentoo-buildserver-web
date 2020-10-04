@@ -43,7 +43,7 @@ function containerToJob(container) {
         running = false;
         const statusString = container.Status.split(" ");
         const exitCode = statusString[1].replace("(", "").replace(")", "");
-        success = exitCode !== "0";
+        success = exitCode === "0";
     } else {
         running = true;
     }
