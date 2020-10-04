@@ -9,7 +9,7 @@ async function getBuildServerContainers(docker) {
 }
 
 function parseContainerName(name) {
-    const split = name.spilt("_");
+    const split = name.spilt("-");
     const timestamp = split.pop();
     let jobType = null;
 
@@ -17,7 +17,7 @@ function parseContainerName(name) {
         jobType = split.pop();
     }
 
-    const profile = split.concat("/");
+    const profile = split[0].replace("_", "/");
 
     return { profile, timestamp, jobType };
 }
