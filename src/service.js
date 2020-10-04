@@ -17,7 +17,7 @@ function parseContainerName(name) {
         jobType = split.pop();
     }
 
-    const profile = split[0].replace("_", "/").substring(1);
+    const profile = split[0].replaceAll("_", "/").substring(1);
 
     return { profile, timestamp, jobType };
 }
