@@ -26,7 +26,7 @@ function containerToJob(container) {
     let nameMetadata;
 
     try {
-        nameMetadata = parseContainerName(container.names[0]);
+        nameMetadata = parseContainerName(container.Names[0]);
     } catch {
         // return null when we can't parse the metadata from the container's name
         return null;
