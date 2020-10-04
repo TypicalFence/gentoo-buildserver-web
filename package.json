@@ -1,0 +1,39 @@
+{
+  "name": "gentoo-buildserver-web",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "author": "fence",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon start app.js",
+    "lint": "eslint src/**/*.js*  views/**/*.js*",
+    "fix": "eslint --fix src/**/*.js*  views/**/*.js*"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dockerode": "^3.2.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-react-views": "^0.11.0",
+    "friendly-time": "^1.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "twemoji": "^13.0.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.7.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.4"
+  }
+}

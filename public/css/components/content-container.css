@@ -1,0 +1,18 @@
+.content-container {
+    width: 100vw;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+@media screen and (min-width: 900px) {
+    .content-container {
+        width: 80vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .content-container {
+        width: 60vw;
+    }
+}

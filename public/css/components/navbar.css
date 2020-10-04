@@ -1,0 +1,30 @@
+.navbar {
+    background-color: var(--main-color);
+    display: flex;
+    padding: 2rem;
+}
+
+.navbar-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+.navbar-link:first-child {
+    padding-left: 0;
+}
+
+.navbar-link:last-child {
+    padding-right: 0;
+}
+
+.navbar-link:hover {
+    color: white;
+}
+
+.navbar-right {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}

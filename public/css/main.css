@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+@import "components/index.css";
+@import "pages/index.css";
+
+:root {
+    --gentoo-purple: #54487A;
+    --gentoo-purple-light: #61538D;
+    --gentoo-purple-light2: #6E56AF;
+    --gentoo-grey: #DDDAEC;
+    --gentoo-green: #73D216;
+    --gentoo-red: #D9534F;
+    --main-color: var(--gentoo-purple);
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+button {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+input {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--gentoo-grey);
+}
+
+.main-content {
+    display: flex;
+}
+
+.button {
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+.button.red {
+    background-color: red;
+}
+
+.button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
